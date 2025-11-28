@@ -11,8 +11,8 @@ services:
     container_name: mean-backend
     environment:
       - MONGO_URL=mongodb+srv://richasahu4190_db_user:rBkePYlh8S2RaJLX@cluster0.z4zi8j1.mongodb.net/?appName=Cluster0
-    ports:
-      - "3000:3000"
+    expose:
+      - "3000"     # internal only, no public port
     depends_on:
       - mongo
     restart: always
