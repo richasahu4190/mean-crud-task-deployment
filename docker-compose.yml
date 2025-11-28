@@ -1,0 +1,40 @@
+version: '3.9'
+
+services:
+  frontend:
+    build: ./frontend
+    container_name: mean-frontend
+    restart: always
+
+  backend:
+    build: ./backend
+    container_name: mean-backend
+    environment:
+      - MONGO_URL=mongodb+srv://richasahu4190_db_user:rBkePYlh8S2RaJLX@cluster0.z4zi8j1.mongodb.net/?appName=Cluster0
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+    restart: always
+
+  mongo:
+    image: mongo:6
+    container_name: mean-mongo
+    volumes:
+      - mongo-data:/data/db
+    restart: always
+
+  nginx:
+    image: nginx:latest
+    container_name: mean-nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - frontend
+      - backend
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    restart: always
+
+volumes:
+  mongo-data:
