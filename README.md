@@ -48,3 +48,9 @@ Run `ng serve --port 3000`
 You can modify the `src/app/services/tutorial.service.ts` file to adjust how the frontend interacts with the backend.
 
 Navigate to `http://localhost:3000/`
+
+### Screenshots
+<img width="1919" height="918" alt="image" src="https://github.com/user-attachments/assets/b673aad0-c3ff-4a00-9ce6-821bfa9d8675" />
+<img width="1919" height="950" alt="image" src="https://github.com/user-attachments/assets/27eb132f-9e74-4f3e-bc14-60c996f6b25f" />
+
+
