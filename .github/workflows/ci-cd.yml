@@ -36,7 +36,8 @@ jobs:
           username: ${{ secrets.VM_USER }}
           password: ${{ secrets.VM_PASSWORD }}
           script: |
+            cd mean-crud-task-deployment
             docker pull ${{ secrets.DOCKER_USERNAME }}/mean-frontend:latest
-            docker pull ${{ secrets.DOCKER_USERNAME }}/mean-backend:latest
+            docker pull ${{ secrets.DOCKER_USERNAME }}/mean-backend:latest 
             docker-compose down
             docker-compose up -d
